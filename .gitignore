@@ -1,0 +1,17 @@
+# Restricted raw data - DO NOT upload (see README for access instructions)
+01_DID/data/public.csv
+01_DID.zip
+
+# Course materials (not part of the submitted project)
+lecture4_git_github_extension.pdf
+lecture4_skill_V23.pdf
+要求.txt
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# OS files
+Thumbs.db
+.DS_Store
