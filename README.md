@@ -10,11 +10,23 @@ the minimum-wage increase separately by restaurant chain.
 - Python 3.8+
 - Packages: `pandas`, `numpy`, `statsmodels`, `matplotlib`
 
-Install with:
-
 ```
 pip install pandas numpy statsmodels matplotlib
 ```
+
+## Project structure
+
+| Path | Content |
+| --- | --- |
+| `report.pdf` | Final research report |
+| `AI_USE_DISCLOSURE.md` | How AI was used at each stage |
+| `code/run_all.py` | Single script that generates all tables and figures |
+| `code/analysis_notebook.ipynb` | Exploratory notebook |
+| `data/raw/` | Original input data (`public.csv`, restricted) |
+| `data/processed/` | Processed data (balanced sample) |
+| `outputs/tables/` | Generated tables (CSV) |
+| `outputs/figures/` | Generated figures (PNG) |
+| `skills/SKILL.md` | Reusable skill that generates the main tables and figures |
 
 ## Data
 
@@ -25,32 +37,35 @@ waves (before and after the April 1992 minimum-wage increase in New Jersey).
 Place the file at:
 
 ```
-01_DID/data/public.csv
+data/raw/public.csv
 ```
 
 > The raw data is for coursework only. Do **not** upload it to a public
-> repository; document how to obtain it instead.
+> repository; document how to obtain it instead. Column definitions are in
+> `data/raw/DATA_DICTIONARY.md`.
 
 ## How to run
 
 From the project root, run:
 
 ```
-python code/analysis.py
+python code/run_all.py
 ```
 
-The script reads the input data and writes all results to the `output/` folder.
+The script reads `data/raw/public.csv` and writes all results to
+`outputs/tables/` and `outputs/figures/`, plus the processed balanced sample
+to `data/processed/`.
 
 ## Output
 
 | File | Content |
 | --- | --- |
-| `output/table2_means.csv` | Mean FTE employment by wave and state |
-| `output/table3_did.csv` | Difference-in-differences regression (robust SEs) |
-| `output/table4_controls.csv` | DID regression with chain and ownership controls |
-| `output/extension_by_chain.csv` | DID estimated separately for each chain |
-| `output/figure1_did.png` | Employment in NJ vs PA, before and after |
-| `output/figure2_chain.png` | DID by chain, with error bars |
+| `outputs/tables/table2_means.csv` | Mean FTE employment by wave and state |
+| `outputs/tables/table3_did.csv` | Difference-in-differences regression (robust SEs) |
+| `outputs/tables/table4_controls.csv` | DID regression with chain and ownership controls |
+| `outputs/tables/extension_by_chain.csv` | DID estimated separately for each chain |
+| `outputs/figures/figure1_did.png` | Employment in NJ vs PA, before and after |
+| `outputs/figures/figure2_chain.png` | DID by chain, with error bars |
 
 ## Key results
 

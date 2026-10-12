@@ -1,5 +1,6 @@
 # Restricted raw data - DO NOT upload (see README for access instructions)
-01_DID/data/public.csv
+data/raw/public.csv
+data/processed/*.csv
 01_DID.zip
 
 # Course materials (not part of the submitted project)
